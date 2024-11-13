@@ -2,17 +2,22 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiple-Choice-Quiz</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <title>Rousseau Lernmaterial</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Gesamtinhalt -->
+
     <div id="quiz-wrapper">
         <!-- Erste Textbox -->
         <div id="info-container">
             <div id="info-box" class="info-box">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+                <strong>Einleitung</strong>
+                <p>
+                    Jean-Jacques Rousseau war ein Denker, der den Mut hatte, gegen die konventionellen Vorstellungen seiner Zeit aufzustehen und radikale Fragen über Freiheit, Gerechtigkeit und das Wesen der Gesellschaft zu stellen. Mit Werken wie "Vom Gesellschaftsvertrag" hat er nicht nur die philosophische Grundlage für moderne Demokratien gelegt, sondern auch die Vorstellung geprägt, dass jeder Mensch frei geboren ist und ein Recht auf diese Freiheit hat. Seine Vision einer gerechten Gesellschaft, in der Vereinbarungen und nicht Stärke die Grundlage der Herrschaft bilden, inspiriert bis heute.
+
+                    In dieser Einheit werdet ihr Rousseaus zentrale Ideen kennenlernen. Um euch auf das Thema einzustimmen, startet bitte mit dem YouTube-Video, das euch eine Einführung in Rousseaus Gedankenwelt gibt.
+                </p>
             </div>
         </div>
 
@@ -32,23 +37,41 @@
             <!-- Fortschrittsanzeige -->
             <div id="progress-bar-container">
                 <div id="progress-bar"></div>
+                <div id="progress-bar-text" class="progress-text" aria-live="polite"></div>
             </div>
             <!-- Karte für Fragen und Antworten -->
             <div id="card" class="card">
                 <div id="question">Frage wird hier angezeigt</div>
-                <div id="answers">
+                <div id="answers" role="radiogroup">
                     <!-- Antwortoptionen werden hier dynamisch eingefügt -->
                 </div>
+                <div id="feedback" class="feedback" aria-live="assertive"></div>
+                <button id="next-button" class="next-button" aria-label="Nächste Frage" disabled>Weiter</button>
             </div>
+            <!-- Ergebnisnachricht -->
+            <div id="result-message" class="result-message" style="display: none;"></div>
         </div>
+
+        <!-- Neustart-Button für Test 1 -->
+        <button id="restartTest1" class="restart-button" style="display: none;">Test erneut starten</button>
 
         <!-- Zweite Textbox -->
         <div id="info-container-2">
             <div id="info-box-2" class="info-box">
-                <strong>Jean-Jacques Rousseau: Vom Gesellschaftsvertrag (1762)</strong>
+                <i> Rousseaus Kritik an der Zivilisation basiert auf seiner grundlegenden Annahme, dass die gesellschaftliche Entwicklung die natürliche Freiheit und das ursprüngliche Glück des Menschen zerstört hat. In seinem Werk "Vom Gesellschaftsvertrag" setzt er sich mit der Frage auseinander, wie rechtmäßige gesellschaftliche Ordnungen entstehen können und wie Freiheit und Gleichheit in einer organisierten Gemeinschaft bewahrt werden können. Dabei stellt er klar, dass natürliche Herrschaft nicht existiert und jede rechtmäßige Regierung auf Vereinbarungen basieren muss, die die Freiheit der Menschen respektieren.</i>
                 <p>
-                    Der Mensch ist frei geboren, und überall liegt er in Ketten. Einer hält sich für den Herrn der anderen und bleibt doch mehr Sklave als sie.
-                    Wie ist dieser Wandel zustande gekommen? Ich weiß es nicht. Was kann ihm Rechtmäßigkeit verleihen? Diese Frage glaube ich beantworten zu können.
+                    <strong>Jean-Jacques Rousseau: Vom Gesellschaftsvertrag (1762)</strong>
+                </p>
+                <p>
+                    Der Mensch ist frei geboren, und überall liegt er in Ketten. Einer hält sich für den Herrn der anderen und bleibt doch mehr Sklave als sie. Wie ist dieser Wandel zustande gekommen? Ich weiß es nicht. Was kann ihm Rechtmäßigkeit verleihen? Diese Frage glaube ich beantworten zu können.
+
+                    Wenn ich nur die Stärke betrachtete und die Wirkung, die sie hervorbringt, würde ich sagen: Solange ein Volk zu gehorchen gezwungen ist und gehorcht, tut es gut daran; sobald es das Joch abschütteln kann und es abschüttelt, tut es noch besser; denn da es seine Freiheit durch dasselbe Recht wiedererlangt, das sie ihm geraubt hat, ist es entweder berechtigt, sie sich zurückzuholen, oder man hatte keinerlei Recht, sie ihm wegzunehmen. Aber die gesellschaftliche Ordnung ist ein geheiligtes Recht, das allen anderen zur Grundlage dient. Trotzdem stammt dieses Recht nicht von der Natur; es beruht also auf Vereinbarungen. Es handelt sich darum, die Art dieser Vereinbarungen zu kennen.
+
+                    Da kein Mensch von Natur aus Herrschaft über seinesgleichen ausübt und da Stärke keinerlei Recht erzeugt, bleiben also die Vereinbarungen als Grundlage jeder rechtmäßigen Herrschaft unter Menschen.
+
+                    Man wird sagen, dass der Despot seinen Untertanen die bürgerliche Ruhe sichert. Mag sein; aber was gewinnen sie dabei, wenn die Kriege, die sein Ehrgeiz ihnen zuzieht, wenn seine unersättliche Gier, wenn die Misshandlungen unter seiner Regierung sie elender machen als gegebenenfalls ihre eigenen Zerwürfnisse? Was gewinnen sie, wenn diese Ruhe gerade eines ihrer Leiden ist? Auch in den Verliesen lebt man in Ruhe; genügt das, um sich dort wohl zu fühlen? Die Griechen, die in der Höhle des Zyklopen gefangen waren, lebten dort ruhig und warteten, bis sie an die Reihe kamen, gefressen zu werden.
+
+                    Auf seine Freiheit verzichten heißt auf seine Eigenschaft als Mensch, auf seine Menschenrechte, sogar auf seine Pflichten verzichten. Wer auf alles verzichtet, für den ist keine Entschädigung möglich. Ein solcher Verzicht ist unvereinbar mit der Natur des Menschen; seinem Willen jegliche Freiheit nehmen heißt seinen Handlungen jegliche Sittlichkeit nehmen. Endlich ist es ein nichtiger und widersprüchlicher Vertrag, einerseits unumschränkte Macht und andererseits unbegrenzten Gehorsam zu vereinbaren.
                 </p>
             </div>
         </div>
@@ -58,32 +81,108 @@
             <!-- Fortschrittsanzeige -->
             <div id="progress-bar-container-2">
                 <div id="progress-bar-2"></div>
+                <div id="progress-bar-text-2" class="progress-text" aria-live="polite"></div>
             </div>
             <!-- Karte für Fragen und Antworten -->
             <div id="card-2" class="card">
                 <div id="question-2">Frage wird hier angezeigt</div>
-                <div id="answers-2">
+                <div id="answers-2" role="radiogroup">
                     <!-- Antwortoptionen werden hier dynamisch eingefügt -->
                 </div>
+                <div id="feedback-2" class="feedback" aria-live="assertive"></div>
+                <button id="next-button-2" class="next-button" aria-label="Nächste Frage" disabled>Weiter</button>
             </div>
+            <!-- Ergebnisnachricht -->
+            <div id="result-message-2" class="result-message" style="display: none;"></div>
         </div>
+
+        <!-- Neustart-Button für Test 2 -->
+        <button id="restartTest2" class="restart-button" style="display: none;">Test erneut starten</button>
 
         <!-- Zeichenbereich -->
         <div id="drawing-container">
-            <h2>Zeichne etwas:</h2>
+            <h2>"Der Mensch ist frei geboren, und überall liegt er in Ketten": Setze diesen Spruch in einer Zeichnung um. Lade dein Ergebnis herunter</h2>
             <canvas id="drawingCanvas" width="800" height="400"></canvas>
             <div id="drawing-controls">
-                <button id="clearCanvas">Leeren</button>
+                <button id="clearCanvas" aria-label="Zeichenfläche leeren">Leeren</button>
+                <button id="undoCanvas" aria-label="Letzten Schritt rückgängig machen">Rückgängig</button>
+                <button id="downloadCanvas" aria-label="Zeichnung herunterladen">Download</button>
                 <label for="colorPicker">Farbe:</label>
-                <input type="color" id="colorPicker" value="#000000">
+                <input type="color" id="colorPicker" value="#000000" aria-label="Farbe auswählen">
                 <label for="lineWidth">Linienstärke:</label>
-                <input type="range" id="lineWidth" min="1" max="10" value="2">
-                <button id="saveAsPDF">Als PDF speichern</button>
+                <input type="range" id="lineWidth" min="1" max="10" value="2" aria-label="Linienstärke einstellen">
+            </div>
+        </div>
+
+        <!-- Neue Textbox unter der Zeichnung -->
+        <div id="info-container-3">
+            <div id="info-box-3" class="info-box">
+                <strong>Der Gesellschaftsvertrag - neu gedacht</strong>
+                <p>
+                    <i> Der vorhergehende Text hebt hervor, dass der Mensch von Natur aus frei ist und jede Herrschaft, die auf Stärke oder Zwang basiert, unrechtmäßig ist. Rousseau kritisiert insbesondere, dass solche Machtverhältnisse den Menschen seiner Freiheit und Würde berauben, und betont, dass eine rechtmäßige gesellschaftliche Ordnung nur auf freiwilligen Vereinbarungen beruhen kann. Doch wie genau kann eine solche Ordnung geschaffen werden, die sowohl die Freiheit des Einzelnen als auch das Wohl der Gemeinschaft sicherstellt?
+
+                    Der folgende Text widmet sich dieser Frage und führt Rousseaus Überlegungen weiter aus, indem er die Notwendigkeit eines Zusammenschlusses erklärt und den Gesellschaftsvertrag als Lösung präsentiert.</i>
+                    <p> <strong> Erster Abschnitt: Naturzustand und Notwendigkeit des Zusammenschlusses </strong>
+                        <p>
+
+                        Ich unterstelle, dass die Menschen jenen Punkt erreicht haben, an dem die Hindernisse, die ihrem Fortbestehen im Naturzustand schaden, den Sieg davontragen über die Kräfte, die jedes Individuum einsetzen kann, um sich in diesem Zustand zu halten. Dann kann dieser ursprüngliche Zustand nicht weiterbestehen, und das Menschengeschlecht würde zugrunde gehen, wenn es die Art seines Daseins nicht änderte.
+
+                        Da die Menschen nun keine neuen Kräfte hervorbringen, sondern nur die vorhandenen vereinen und lenken können, haben sie kein anderes Mittel, sich zu verhalten, als durch Zusammenschluss eine Summe von Kräften zu bilden, stärker als jene Hindernisse, und diese aus einem einzigen Antrieb einzusetzen und gemeinsam wirken zu lassen. </p>
+                </p>
+            </div>
+        </div>
+
+        <!-- Lückentext -->
+        <div id="lueckentext-container" class="test-container">
+            <h2>Lückentexte basierend auf Rousseaus Ideen</h2>
+            <p>Ziehen Sie die richtigen Wörter in die Lücken.</p>
+
+            <ol>
+                <li>"Die Menschheit steht an einem Punkt, an dem die Herausforderungen des Naturzustands ihre individuellen <strong><span class="dropzone" data-answer="Möglichkeiten"></span></strong> übersteigen."</li>
+                <li>"Ohne eine Änderung ihrer Existenzweise würde die menschliche Spezies <strong><span class="dropzone" data-answer="aussterben"></span></strong>."</li>
+                <li>"Da keine neuen Kräfte geschaffen werden können, müssen die bestehenden <strong><span class="dropzone" data-answer="vereint"></span></strong> und gelenkt werden."</li>
+                <li>"Durch <strong><span class="dropzone" data-answer="Zusammenarbeit"></span></strong> können Menschen eine gemeinsame Stärke bilden, die größer ist als die Hindernisse."</li>
+                <li>"Es ist erforderlich, dass alle Kräfte in Einklang gebracht und gemeinsam <strong><span class="dropzone" data-answer="eingesetzt"></span></strong> werden."</li>
+            </ol>
+
+            <h3>Wörter:</h3>
+            <div id="words">
+                <!-- Die Wörter werden jetzt dynamisch durch JavaScript eingefügt -->
+            </div>
+        </div>
+
+        <!-- Neue Textbox unter dem Lückentext mit Tooltips -->
+        <div id="info-container-4">
+            <div id="info-box-4" class="info-box">
+                <p>
+                    Diese Summe von Kräften kann nur durch das <span class="tooltip">Zusammenwirken<span class="tooltiptext">Gemeinsames Handeln oder Kooperieren mehrerer Personen oder Kräfte.</span></span> mehrerer entstehen: Da aber <span class="tooltip">Kraft<span class="tooltiptext">Die Fähigkeit, etwas zu bewirken oder zu leisten; Stärke.</span></span> und <span class="tooltip">Freiheit<span class="tooltiptext">Der Zustand, in dem eine Person in der Lage ist, ohne Zwang zu handeln oder zu denken.</span></span> jedes Menschen die ersten Werkzeuge für seine Erhaltung sind – wie kann er sie verpfänden, ohne sich zu schaden und ohne Pflichten gegen sich selbst zu vernachlässigen? Diese Schwierigkeit lässt sich, auf meinen Gegenstand angewandt, so ausdrücken: <span class="tooltip">„Finde eine Form des Zusammenschlusses, die mit ihrer ganzen gemeinsamen Kraft die Person und das Vermögen jedes einzelnen Mitglieds verteidigt und schützt und durch die doch jeder, indem er sich mit allen vereinigt, nur sich selbst gehorcht und genauso frei bleibt wie zuvor.“<span class="tooltiptext">Dies beschreibt das Ziel des Gesellschaftsvertrags: individuelle Freiheit und gemeinsamer Schutz.</span></span> Das ist das grundlegende Problem, dessen Lösung der <span class="tooltip">Gesellschaftsvertrag<span class="tooltiptext">Ein Vertrag, durch den Individuen eine Gesellschaft bilden und sich gemeinsamen Gesetzen unterwerfen.</span></span> darstellt.
+                </p>
+                <p>
+                    Die Bestimmungen dieses Vertrages sind durch die Natur des Aktes vorgegeben, dass die geringste Abänderung sie null und nichtig machen würde; so dass sie, wiewohl sie vielleicht niemals förmlich ausgesprochen wurden, allenthalben die gleichen sind, allenthalben in Kraft und anerkannt; bis dann, wenn der Gesellschaftsvertrag verletzt wird, jeder wieder in seine ursprünglichen Rechte eintritt, seine <span class="tooltip">natürliche Freiheit<span class="tooltiptext">Die Freiheit, die der Mensch im Naturzustand besitzt, bevor er Teil einer Gesellschaft wird.</span></span> wiedererlangt und dadurch die auf Vertrag beruhende Freiheit verliert, für die er seine aufgegeben hatte.
+                </p>
+                <p>
+                    Diese Bestimmungen lassen sich bei richtigem Verständnis sämtlich auf eine einzige zurückführen, nämlich die völlige <span class="tooltip">Entäußerung<span class="tooltiptext">Der Verzicht auf individuelle Rechte zugunsten des Gemeinwohls.</span></span> jedes Mitglieds mit allen seinen Rechten an das <span class="tooltip">Gemeinwesen<span class="tooltiptext">Die Gemeinschaft oder Gesellschaft als Ganzes.</span></span> als Ganzes. Denn erstens ist die Ausgangslage, da jeder sich voll und ganz gibt, für alle die gleiche, und da sie für alle gleich ist, hat keiner ein Interesse daran, sie für die anderen beschwerlich zu machen.
+                </p>
+                <p>
+                    Darüber hinaus ist die Vereinigung, da die Entäußerung ohne Vorbehalt geschah, so vollkommen, wie sie nur sein kann, und kein Mitglied hat mehr etwas zu fordern. Denn wenn den Einzelnen einige Rechte blieben, würde jeder – da es keine allen übergeordnete Instanz gäbe, die zwischen ihm und der Öffentlichkeit entscheiden könnte – bald den Anspruch erheben, weil er in manchen Punkten sein eigener Richter ist, es auch in allen zu sein; der <span class="tooltip">Naturzustand<span class="tooltiptext">Ein theoretischer Zustand ohne Gesellschaft oder Regierung, in dem der Mensch ursprünglich lebte.</span></span> würde fortdauern, und der Zusammenschluss wäre dann notwendig tyrannisch oder inhaltslos.
+                </p>
+                <p>
+                    Schließlich gibt sich jeder, da er sich allen gibt, niemandem, und da kein Mitglied existiert, über das man nicht das gleiche Recht erwirbt, das man ihm über sich einräumt, gewinnt man den Gegenwert für alles, was man aufgibt, und mehr Kraft, um zu bewahren, was man hat.
+                </p>
+                <p>
+                    Wenn man also beim Gesellschaftsvertrag von allem absieht, was nicht zu seinem Wesen gehört, wird man finden, dass er sich auf Folgendes beschränkt: Gemeinsam stellen wir alle, jeder von uns seine Person und seine ganze Kraft unter die oberste Richtschnur des <span class="tooltip">Gemeinwillens<span class="tooltiptext">Der kollektive Wille der Bürger, der auf das Gemeinwohl abzielt.</span></span>, und wir nehmen, als Körper, jedes Glied als untrennbaren Teil des Ganzen auf.
+                </p>
+                <p>
+                    Dieser Akt des Zusammenschlusses schafft augenblicklich anstelle der Einzelperson jedes Vertragspartners eine sittliche Gesamtkörperschaft, die aus ebenso vielen Gliedern besteht, wie die Versammlung Stimmen hat, und die durch ebendiesen Akt ihre Einheit, ihr gemeinschaftliches Ich, ihr Leben und ihren Willen erhält. Diese öffentliche Person, die so aus dem Zusammenschluss aller zustande kommt, trug früher den Namen <span class="tooltip">Polis<span class="tooltiptext">Der griechische Stadtstaat, ein politisches Gemeinwesen.</span></span>, heute trägt sie den der <span class="tooltip">Republik<span class="tooltiptext">Eine Staatsform, in der die Macht beim Volk liegt und durch gewählte Vertreter ausgeübt wird.</span></span> oder der staatlichen Körperschaft, die von ihren Gliedern <span class="tooltip">Staat<span class="tooltiptext">Eine organisierte politische Gemeinschaft unter einer Regierung.</span></span> genannt wird, wenn sie passiv, <span class="tooltip">Souverän<span class="tooltiptext">Die höchste Autorität oder Macht in einem Staat.</span></span>, wenn sie aktiv ist, und <span class="tooltip">Macht<span class="tooltiptext">Die Fähigkeit oder Befugnis, Entscheidungen zu treffen und Handlungen durchzusetzen.</span></span> im Vergleich mit ihresgleichen. Was die Mitglieder betrifft, so tragen sie als Gesamtheit den Namen <span class="tooltip">Volk<span class="tooltiptext">Die Gesamtheit der Bürger eines Staates oder einer Nation.</span></span>, als Einzelne nennen sie sich <span class="tooltip">Bürger<span class="tooltiptext">Personen, die die Staatsangehörigkeit eines Landes besitzen und damit verbundene Rechte und Pflichten haben.</span></span> [<i>citoyen</i>], sofern sie Teilhaber an der Souveränität sind, und <span class="tooltip">Untertan<span class="tooltiptext">Personen, die der Autorität eines Herrschers oder Staates unterliegen.</span></span>, sofern sie den Gesetzen des Staates unterworfen sind.
+                </p>
+                <p>
+                    <strong>Vom Gesellschaftsvertrag (1762)</strong>
+                </p>
             </div>
         </div>
     </div>
 
-    <!-- JavaScript -->
+    <!-- Einbindung des JavaScript-Codes -->
     <script src="script.js"></script>
 </body>
 </html>
