@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple-Choice-Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div id="quiz-wrapper">
+        <!-- Erste Textbox -->
+        <div id="info-container">
+            <div id="info-box" class="info-box">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+            </div>
+        </div>
+
+        <!-- Video-Bereich -->
+        <div id="video-container" class="video-box">
+            <iframe 
+                src="https://www.youtube.com/embed/81KfDXTTtXE" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Erster Test -->
+        <div id="quiz-container" class="test-container">
+            <!-- Fortschrittsanzeige -->
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <!-- Karte für Fragen und Antworten -->
+            <div id="card" class="card">
+                <div id="question">Frage wird hier angezeigt</div>
+                <div id="answers">
+                    <!-- Antwortoptionen werden hier dynamisch eingefügt -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Zweite Textbox -->
+        <div id="info-container-2">
+            <div id="info-box-2" class="info-box">
+                <strong>Jean-Jacques Rousseau: Vom Gesellschaftsvertrag (1762)</strong>
+                <p>
+                    Der Mensch ist frei geboren, und überall liegt er in Ketten. Einer hält sich für den Herrn der anderen und bleibt doch mehr Sklave als sie.
+                    Wie ist dieser Wandel zustande gekommen? Ich weiß es nicht. Was kann ihm Rechtmäßigkeit verleihen? Diese Frage glaube ich beantworten zu können.
+                </p>
+            </div>
+        </div>
+
+        <!-- Zweiter Test -->
+        <div id="test-2-container" class="test-container">
+            <!-- Fortschrittsanzeige -->
+            <div id="progress-bar-container-2">
+                <div id="progress-bar-2"></div>
+            </div>
+            <!-- Karte für Fragen und Antworten -->
+            <div id="card-2" class="card">
+                <div id="question-2">Frage wird hier angezeigt</div>
+                <div id="answers-2">
+                    <!-- Antwortoptionen werden hier dynamisch eingefügt -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Zeichenbereich -->
+        <div id="drawing-container">
+            <h2>Zeichne etwas:</h2>
+            <canvas id="drawingCanvas" width="800" height="400"></canvas>
+            <div id="drawing-controls">
+                <button id="clearCanvas">Leeren</button>
+                <label for="colorPicker">Farbe:</label>
+                <input type="color" id="colorPicker" value="#000000">
+                <label for="lineWidth">Linienstärke:</label>
+                <input type="range" id="lineWidth" min="1" max="10" value="2">
+                <button id="saveAsPDF">Als PDF speichern</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
